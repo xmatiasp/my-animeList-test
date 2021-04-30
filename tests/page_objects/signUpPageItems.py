@@ -13,6 +13,7 @@ class SignUpPageItems:
         self.select_day_input = (By.NAME, 'birthday[day]')
         self.select_year_input = (By.NAME, 'birthday[year]')
         self.agreement_checkbox = (By.NAME, 'agreement')
+        self.create_account_button = (By.CLASS_NAME, 'inputButton')
 
     def enter_email(self, keys):
         enter_mail = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.email_input))
@@ -42,3 +43,6 @@ class SignUpPageItems:
 
     def click_agreement_checkbox(self):
         self.driver.find_element(*self.agreement_checkbox).click()
+
+    def click_create_account(self):
+        self.driver.find_element(*self.create_account_button).click()
